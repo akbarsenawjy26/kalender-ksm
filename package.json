@@ -1,0 +1,27 @@
+{
+  "name": "kalender-jual-beli-ternak",
+  "version": "1.0.0",
+  "description": "Kalender weton Jawa dan Almanak Lunar untuk transaksi ternak Kandang Sena Mulya.",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "dependencies": {
+    "lunar-javascript": "^1.7.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.3"
+  }
+}

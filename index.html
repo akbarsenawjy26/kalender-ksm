@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kalender transaksi ternak Kandang Sena Mulya dengan perhitungan Weton Jawa Panca Sudha dan Almanak Lunar Tionghoa." />
+    <title>Kandang Sena Mulya | Kalender Transaksi Ternak</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="site-header">
+        <div class="page-width header-content">
+          <a class="brand" href="#" aria-label="Kandang Sena Mulya, beranda">
+            <img class="brand-logo" src="./logo.jpeg" alt="" />
+            <span class="brand-copy">
+              <strong>Kandang Sena Mulya</strong>
+              <span>Data-Driven &amp; Traditional Wisdom Farming</span>
+            </span>
+          </a>
+          <p class="header-location">Pakunden · Sukorejo · Blitar</p>
+        </div>
+      </header>
+
+      <main class="page-width main-content">
+        <section class="page-intro" aria-labelledby="pageTitle">
+          <!-- <p class="eyebrow">Perencanaan transaksi</p> -->
+          <!-- <h1 id="pageTitle">Kalender hari transaksi ternak</h1> -->
+          <!-- <p>Pertimbangkan waktu transaksi dengan membaca Weton Jawa dan Almanak Tionghoa secara berdampingan.</p> -->
+        </section>
+
+        <dialog id="dayInsightsDialog" class="insights-dialog" aria-labelledby="dialogDateTitle">
+          <div class="dialog-heading">
+            <div>
+              <p class="eyebrow">Rincian hari terpilih</p>
+              <h2 id="dialogDateTitle">-</h2>
+            </div>
+            <form method="dialog">
+              <button class="dialog-close" type="submit">Tutup</button>
+            </form>
+          </div>
+
+          <section id="collectiveResult" class="collective-result" aria-live="polite">
+            <span id="collectiveResultLabel" class="collective-result-label">Hasil akhir</span>
+            <strong id="collectiveStatus">-</strong>
+            <p id="collectiveExplanation">-</p>
+          </section>
+
+          <section class="insights-grid" aria-label="Hasil perhitungan">
+            <article class="insight-card">
+              <div class="card-heading">
+                <div>
+                  <p class="eyebrow">Analisis utama · bobot 70%</p>
+                  <h3 class="card-subtitle">Panca Sudha Ternak</h3>
+                  <h2 id="wetonName">-</h2>
+                </div>
+                <span id="wetonStatus" class="status-pill">-</span>
+              </div>
+
+              <p id="wetonCategory" class="category-line">-</p>
+              <div class="activity-priority">
+                <strong id="wetonPriorityStatus">-</strong>
+                <p id="wetonPriorityDescription">-</p>
+              </div>
+              <p id="wetonDescription" class="insight-description">-</p>
+
+              <div class="neptu-row" aria-label="Rincian neptu">
+                <div><span>Total neptu</span><strong id="totalNeptu">-</strong></div>
+                <div><span>Sisa pembagian 5</span><strong id="sisaNeptu">-</strong></div>
+              </div>
+            </article>
+
+            <details class="insight-card feng-shui-card" open>
+              <summary class="card-heading feng-shui-summary">
+                <div>
+                  <p class="eyebrow">Penimbang tambahan · bobot 30%</p>
+                  <p class="feng-shui-label">Feng Shui Tionghoa</p>
+                  <h2>Almanak Lunar</h2>
+                </div>
+                <span id="fengShuiStatus" class="status-pill">-</span>
+              </summary>
+
+              <div class="feng-shui-content">
+                <div class="activity-assessment">
+                  <span class="assessment-label">Untuk hajat: <strong id="selectedActivityLabel">-</strong></span>
+                  <p id="fengShuiActivity">-</p>
+                </div>
+
+                <dl class="lunar-facts">
+                  <div>
+                    <dt>Tanggal lunar</dt>
+                    <dd id="lunarDate">-</dd>
+                  </div>
+                  <div>
+                    <dt>Batang-dahan</dt>
+                    <dd id="lunarGanZhi">-</dd>
+                  </div>
+                  <div>
+                    <dt>Shio &amp; penanda hari</dt>
+                    <dd id="lunarZodiac">-</dd>
+                  </div>
+                </dl>
+
+                <details class="almanac-details">
+                  <summary>Lihat daftar umum Almanak hari ini</summary>
+                  <p class="details-note">Daftar ini adalah kegiatan umum dari Almanak; belum tentu khusus untuk transaksi ternak.</p>
+                  <p id="generalRestriction" class="general-restriction" hidden></p>
+                  <div class="almanac-list">
+                    <div>
+                      <h3>Umumnya dianjurkan</h3>
+                      <p id="recommendedList">-</p>
+                    </div>
+                    <div>
+                      <h3>Umumnya dihindari</h3>
+                      <p id="avoidedList">-</p>
+                    </div>
+                  </div>
+                </details>
+              </div>
+            </details>
+          </section>
+        </dialog>
+
+        <dialog id="shareDialog" class="share-dialog" aria-labelledby="shareDialogTitle">
+          <div class="share-dialog-heading">
+            <div>
+              <p class="eyebrow">Siap dibagikan</p>
+              <h2 id="shareDialogTitle">Bagikan hasil tanggal</h2>
+            </div>
+            <form method="dialog">
+              <button class="dialog-close" type="submit" aria-label="Tutup menu berbagi">Tutup</button>
+            </form>
+          </div>
+
+          <p class="share-intro">Pratinjau ini memuat tanggal, hajat, serta ringkasan dari kedua perhitungan.</p>
+          <article class="share-card" aria-label="Pratinjau kartu hasil">
+            <div class="share-card-brand">
+              <img src="./logo.jpeg" alt="" />
+              <div>
+                <strong>Kandang Sena Mulya</strong>
+                <span>Data-Driven &amp; Traditional Wisdom Farming</span>
+              </div>
+            </div>
+            <p class="share-card-eyebrow">RINGKASAN TANGGAL TRANSAKSI</p>
+            <h3 id="shareDate">-</h3>
+            <p class="share-card-activity">Hajat: <strong id="shareActivity">-</strong></p>
+            <div id="shareOverall" class="share-overall">
+              <span>Rekomendasi gabungan</span>
+              <strong id="shareOverallStatus">-</strong>
+            </div>
+            <div class="share-card-details">
+              <section>
+                <span>PANCA SUDHA TERNAK</span>
+                <strong id="shareWeton">-</strong>
+                <p id="shareWetonDetail">-</p>
+              </section>
+              <section>
+                <span>FENG SHUI TIONGHOA</span>
+                <strong id="shareFengShui">-</strong>
+                <p id="shareFengShuiDetail">-</p>
+              </section>
+            </div>
+            <p class="share-card-note">Panduan tradisi untuk bahan pertimbangan, bukan jaminan hasil bisnis.</p>
+          </article>
+
+          <div class="share-actions" aria-label="Pilihan berbagi">
+            <button id="nativeShareBtn" class="share-action share-action-primary" type="button">Bagikan</button>
+            <button id="copyShareBtn" class="share-action" type="button">Salin ringkasan</button>
+            <button id="downloadShareBtn" class="share-action" type="button">Unduh kartu PNG</button>
+          </div>
+          <p id="shareFeedback" class="share-feedback" role="status" aria-live="polite"></p>
+        </dialog>
+
+        <section class="calendar-panel" aria-labelledby="calendarTitle">
+          <div class="calendar-heading">
+            <div>
+              <p class="eyebrow">Rencana bulanan</p>
+              <h2 id="calendarTitle">Kalender rekomendasi</h2>
+            </div>
+            <div class="month-navigation">
+              <button id="prevMonthBtn" class="month-button" type="button" aria-label="Bulan sebelumnya">‹</button>
+              <h3 id="monthLabel">-</h3>
+              <button id="nextMonthBtn" class="month-button" type="button" aria-label="Bulan berikutnya">›</button>
+            </div>
+          </div>
+
+          <div class="calendar-selection" aria-label="Pilih tanggal dan hajat">
+            <div class="form-field">
+              <label for="dateInput">Tanggal transaksi</label>
+              <input id="dateInput" type="date" />
+            </div>
+            <div class="form-field">
+              <label for="activityInput">Jenis hajat</label>
+              <select id="activityInput">
+                <option value="Beli Bakalan">Beli bakalan (fattening)</option>
+                <option value="Beli Indukan">Beli indukan (breeding)</option>
+                <option value="Beli Pejantan">Beli pejantan (pemacek)</option>
+                <option value="Jual Ternak / Panen">Jual ternak / panen</option>
+                <option value="TTD Kontrak B2B / Kemitraan">TTD kontrak B2B / kemitraan</option>
+              </select>
+            </div>
+            <button id="openShareBtn" class="share-open-button" type="button">
+              <span aria-hidden="true">↗</span>
+              Bagikan hasil
+            </button>
+          </div>
+
+          <div class="calendar-tools">
+            <div class="filter-group" role="group" aria-label="Filter hari kalender">
+              <button type="button" class="calendar-filter is-active" data-filter="all" aria-pressed="true">Semua</button>
+              <button type="button" class="calendar-filter" data-filter="super-golden" aria-pressed="false">Super Golden</button>
+              <button type="button" class="calendar-filter" data-filter="weton-baik" aria-pressed="false">Jawa baik</button>
+              <button type="button" class="calendar-filter" data-filter="lunar-lucky" aria-pressed="false">Feng Shui baik</button>
+            </div>
+            <p id="calendarSummary" class="calendar-summary" aria-live="polite">-</p>
+          </div>
+
+          <div class="calendar-legend" aria-label="Keterangan warna">
+            <span><i class="legend-dot legend-golden"></i>Super Golden</span>
+            <span><i class="legend-dot legend-jawa"></i>Jawa sangat baik</span>
+            <span><i class="legend-dot legend-lunar"></i>Feng Shui baik</span>
+            <span><i class="legend-dot legend-avoid"></i>Avoid</span>
+          </div>
+
+          <div class="calendar-weekdays" aria-hidden="true"><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span><span>Min</span></div>
+          <div id="calendarGrid" class="calendar-grid"></div>
+          <p class="calendar-footnote">Pilih tanggal pada kalender untuk membuka pop-up rincian Panca Sudha dan Feng Shui. Warna merangkum status gabungan, kecuali filter yang sedang dipilih.</p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="page-width footer-content">
+          <div class="footer-business">
+            <strong>Kandang Sena Mulya</strong>
+            <p class="footer-tagline">Data-Driven &amp; Traditional Wisdom Farming</p>
+            <p class="footer-description">Penyedia domba dan kambing bakalan, penggemukan hingga pasokan rutin B2B untuk aqiqah, restoran, dan pedagang besar, dengan kontrol kualitas pakan Complete Feed dan silase presisi.</p>
+            <p class="footer-service">Melayani Blitar dan Jawa Timur</p>
+          </div>
+          <div class="footer-contact">
+            <span>Jalan Kali Krasak No. 35, Kel. Pakunden, Kec. Sukorejo, Blitar, Jawa Timur 66122, Indonesia</span>
+            <a href="tel:+6285190330629">0851-9033-0629</a>
+            <a href="https://wa.me/6285190330629">WhatsApp</a>
+            <span>Senin–Minggu · 08.00–20.00 WIB</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="assets/js/app.js"></script>
+  </body>
+</html>
